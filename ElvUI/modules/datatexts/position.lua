@@ -8,6 +8,7 @@ function E.PP(p, obj)
 	local right = ElvuiInfoRight
 	local mapleft = ElvuiMinimapStatsLeft
 	local mapright = ElvuiMinimapStatsRight
+	local maptop = ElvuiMinimapStatsTop
 	local t
 	if obj:GetParent():GetName() == "TimeDataText" or obj:GetParent():GetName() == "DurabilityDataText" then t = true else t = false end
 	
@@ -59,6 +60,10 @@ function E.PP(p, obj)
 			obj:SetHeight(ElvuiMinimapStatsRight:GetHeight())
 			obj:SetPoint("CENTER", ElvuiMinimapStatsRight, 0, 0)
 			if t ~= true then obj:SetParent(mapright) else obj:GetParent():SetParent(mapright) end
+		elseif p == 9 then
+			obj:SetHeight(ElvuiMinimapStatsTop:GetHeight())
+			obj:SetPoint("CENTER", ElvuiMinimapStatsTop, 0, 0)
+			if t ~= true then obj:SetParent(maptop) else obj:GetParent():SetParent(maptop) end
 		end
 	end
 end

@@ -28,13 +28,20 @@ if ElvuiMinimap then
 
 	local minimapstatsright = CreateFrame("Frame", "ElvuiMinimapStatsRight", ElvuiMinimap)
 	minimapstatsright:CreatePanel("Default", (ElvuiMinimap:GetWidth() / 2) -2, 19, "TOPRIGHT", ElvuiMinimap, "BOTTOMRIGHT", 0, E.Scale(-3))
+	
+	local minimapstatstop = CreateFrame("Frame", "ElvuiMinimapStatsTop", ElvuiMinimap)
+	minimapstatstop:CreatePanel("Default", ElvuiMinimap:GetWidth() - 2, 19, "BOTTOM", ElvuiMinimap, "TOP", 0, E.Scale(3))
+	
 	ElvuiMinimapStatsLeft:SetTemplate("Default", true)
 	ElvuiMinimapStatsRight:SetTemplate("Default", true)
+	ElvuiMinimapStatsTop:SetTemplate("Default", true)
 	ElvuiMinimapStatsLeft:CreateShadow("Default")
 	ElvuiMinimapStatsRight:CreateShadow("Default")
+	ElvuiMinimapStatsTop:CreateShadow("Default")
 	
 	TukuiMinimapStatsLeft = ElvuiMinimapStatsLeft -- conversion
 	TukuiMinimapStatsRight = ElvuiMinimapStatsRight -- conversion
+	TukuiMinimapStatsTop = ElvuiMinimapStatsTop
 end
 
 -- MAIN ACTION BAR
